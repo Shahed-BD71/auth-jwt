@@ -6,7 +6,7 @@ const { requireLogin } = require("../middleware/auth");
 
 // Reg user..
 router.post("/register", async (req, res) => {
-  const { email, name, password } = req.body;
+  const { email, name, password } = req.body.data;
   try {
     let user = await User.findOne({ email });
     if (user) {
@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
 
 // Login User
 router.post("/login", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { email, password } = req.body.data;
   try {
     let user = await User.findOne({ email });
     if (!user) {

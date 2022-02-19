@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "node server.js",
+    "start": "node server.js",
     "server": "nodemon server.js",
-    "start": "concurrently \"npm run server\" \"npm run dev --prefix client\"",
+    "dev": "concurrently \"npm run server\" \"npm start --prefix client\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
@@ -25,5 +25,6 @@
   },
   "optionalDependencies": {
     "win-node-env": "^0.6.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

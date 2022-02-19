@@ -10,7 +10,7 @@ export default function Home(props) {
   const getUser = async () => {
     const response = await axios.get("/auth", {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       },
     });
     setUser(response.data);

@@ -10,9 +10,17 @@ export default function Login(props) {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("auth/login", {
-        data,
-      });
+      const response = await axios.post(
+        "auth/login",
+        {
+          data,
+        },
+        {
+          headers: {
+            "Content-type": "application/json"
+          }
+        }
+      );
       localStorage.setItem("token", response.data.token);
       swal({
         title: "Success!",

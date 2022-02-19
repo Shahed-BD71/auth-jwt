@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start:dev": "node server.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run dev --prefix client\"",
+    "start": "concurrently \"npm run server\" \"npm run dev --prefix client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
